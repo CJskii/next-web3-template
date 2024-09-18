@@ -19,6 +19,16 @@ a {
   box-sizing: border-box;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  color: aqua;
+}
+
 /* Add your custom styles for themes here */
 
 @layer base {

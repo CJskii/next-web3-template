@@ -3,6 +3,7 @@ import { PageLayout } from "@/components/page-layout";
 import { Button } from "@/components/ui/button";
 import { NextPage } from "next/types";
 import { ThemeToggler } from "@/components/ui/theme-toggler";
+import React from "react";
 
 const HomePage: NextPage = () => {
   return (
