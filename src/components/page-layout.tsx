@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { HeadComponent } from "./head-component";
 import React from "react";
+import { Navbar } from "./navigation/navbar";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -16,9 +17,18 @@ export const PageLayout: React.FC<PageLayoutProps> = ({
   return (
     <>
       <HeadComponent title={title} description={description} />
-      <main className="min-h-[100vh] p-8 flex flex-col justify-center items-center gap-8">
-        {children}
-      </main>
+      <Navbar />
+      <MainContainer>{children}</MainContainer>
     </>
+  );
+};
+
+const MainContainer: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <main className="min-h-[100vh] p-8 flex flex-col justify-center items-center gap-8">
+      {children}
+    </main>
   );
 };
