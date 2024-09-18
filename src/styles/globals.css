@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -13,4 +17,94 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* Add your custom styles for themes here */
+
+@layer base {
+  :root {
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left, #000c40, #607d8b);
+    --background: 243 100% 98.26%;
+    --foreground: 243 10% 0.52%;
+
+    --muted: 243 10% 91.3%;
+    --muted-foreground: 243 5% 41.3%;
+
+    --popover: 243 10% 91.3%;
+    --popover-foreground: 243 10% 0.65%;
+
+    --card: 243 10% 91.3%;
+    --card-foreground: 243 10% 0.65%;
+
+    --border: 243 15% 89.52%;
+    --input: 243 15% 89.52%;
+
+    --primary: 243 100% 13%;
+    --primary-foreground: 243 2% 91.3%;
+
+    --secondary: 243 5% 95.65%;
+    --secondary-foreground: 243 7% 11.3%;
+
+    --accent: 243 5% 95.65%;
+    --accent-foreground: 243 7% 11.3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 243 100% 13%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left, #2b5876, #4e4376);
+
+    --background: 217 30.55% 2.56%;
+    --foreground: 217 4.7% 96.6%;
+
+    --muted: 217 23.5% 9.6%;
+    --muted-foreground: 217 4.7% 53.2%;
+
+    --popover: 217 55.6% 4.16%;
+    --popover-foreground: 217 4.7% 96.6%;
+
+    --card: 217 55.6% 4.16%;
+    --card-foreground: 217 4.7% 96.6%;
+
+    --border: 217 23.5% 9.6%;
+    --input: 217 23.5% 9.6%;
+
+    --primary: 217 47% 32%;
+    --primary-foreground: 217 4.7% 96.6%;
+
+    --secondary: 217 23.5% 9.6%;
+    --secondary-foreground: 217 4.7% 96.6%;
+
+    --accent: 217 23.5% 9.6%;
+    --accent-foreground: 217 4.7% 96.6%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 217 4.7% 96.6%;
+
+    --ring: 217 47% 32%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
