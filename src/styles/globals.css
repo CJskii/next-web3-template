@@ -118,3 +118,7 @@ a {
     @apply bg-background text-foreground;
   }
 }
+
+.bg-gradient {
+  @apply bg-gradient-to-b from-secondary to-primary;
+}
