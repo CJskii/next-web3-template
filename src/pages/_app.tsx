@@ -14,12 +14,16 @@ import { SessionProvider } from "next-auth/react";
 import { config } from "../wagmi";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "@/components/navigation/navbar";
+import { Footer } from "@/components/footer";
 
 const client = new QueryClient();
 
 const getSiweMessageOptions: GetSiweMessageOptions = () => ({
   statement: "Sign in to Rainbowkit with Ethereum",
 });
+
+// TODO: wagmi to change default theme based on the user's system preference
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -36,13 +40,25 @@ function MyApp({ Component, pageProps }: AppProps) {
                 enableSystem
                 disableTransitionOnChange
               >
-                <Component {...pageProps} />
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
               </ThemeProvider>
             </RainbowKitProvider>
           </RainbowKitSiweNextAuthProvider>
         </QueryClientProvider>
       </SessionProvider>
     </WagmiProvider>
+  );
+}
+
+function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Navbar />
+      {children}
+      <Footer />
+    </>
   );
 }
 
