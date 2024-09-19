@@ -1,13 +1,20 @@
 import Image from "next/image";
 // import logoBlack from "@/../assets/logo-black.svg";
 // import logoWhite from "@/../assets/logo-white.svg";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
 import { MobileNavLinks } from "./navbar";
 import { ThemeToggler } from "../ui/theme-toggler";
 import { useState } from "react";
 import { ConnectWalletButton } from "../ui/connect-button";
 import { Typography } from "../ui/typography";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export const HeaderSheet: React.FC = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -21,6 +28,13 @@ export const HeaderSheet: React.FC = () => {
         <MenuIcon className="rotate-90" />
       </SheetTrigger>
       <SheetContent className=" border-neutral-600">
+        <VisuallyHidden>
+          <SheetTitle>Mobile Menu</SheetTitle>
+          <SheetDescription>
+            Navigate through the application using the mobile menu options.
+          </SheetDescription>
+        </VisuallyHidden>
+
         <div className="mb-6">
           {/* 
           @
