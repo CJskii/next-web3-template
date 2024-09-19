@@ -128,24 +128,42 @@ Feel free to include:
 ```bash
 next-web3-template/
 │
-├── public/                # Public assets (e.g., favicon, images)
+├── public/                # Public assets (e.g., favicon)
+│   └── favicon.ico
 ├── src/                   # Source files
+│   ├── assets/            # Other assets
+│   │   ├── icons/         # Icon assets
+│   │   │   └── social.tsx
+│   │   └── images/        # Image assets
 │   ├── components/        # UI components
-│   │   ├── ui/            # UI elements and components
-│   │   │   ├── head-component.tsx
-│   │   │   ├── page-layout.tsx
-│   │   │   └── theme-provider.tsx
+│   │   ├── navigation/    # Navigation elements
+│   │   │   ├── header-sheet.tsx
+│   │   │   ├── navbar.tsx
+│   │   │   └── navigation-menu.tsx
+│   │   └── ui/            # UI elements and components
+│   │       ├── button.tsx
+│   │       ├── connect-button.tsx
+│   │       ├── dropdown-menu.tsx
+│   │       ├── separator.tsx
+│   │       ├── sheet.tsx
+│   │       ├── theme-toggler.tsx
+│   │       ├── typography.tsx
+│   │       └── footer.tsx
 │   ├── lib/               # Utility functions and configurations
 │   │   └── utils.ts
 │   ├── pages/             # Next.js pages and API routes
-│   │   ├── api/           # API routes (e.g., NextAuth, SIWE)
+│   │   ├── api/           # API routes (e.g., NextAuth)
+│   │   │   └── auth/
+│   │   │       └── [...nextauth].ts
+│   │   ├── example/       # Example pages
+│   │   │   └── index.tsx
 │   │   ├── _app.tsx       # Next.js custom App component
+│   │   ├── 404.tsx        # 404 page
 │   │   └── index.tsx      # Homepage
 │   ├── styles/            # Global and module styles
-│       └── globals.css
+│   │   └── globals.css
 │   └── wagmi.ts           # Wagmi configuration for Web3
 ├── .env.example           # Example environment variables
-├── .env.local             # Local environment variables (shouldn't be committed)
 ├── .gitignore             # Files and directories to ignore in Git
 ├── bun.lockb              # Bun lock file for dependencies
 ├── components.json        # Shadcn component configuration
@@ -156,6 +174,7 @@ next-web3-template/
 ├── README.md              # Project documentation
 ├── tailwind.config.ts     # TailwindCSS configuration
 └── tsconfig.json          # TypeScript configuration
+
 ```
 
 ---
