@@ -80,16 +80,12 @@ const productLinks: DropdownLinks[] = [
 
 const otherLinks: NavLink[] = [
   {
-    label: "Marketplace",
-    href: "/marketplace",
-  },
-  {
-    label: "Bridge",
-    href: "/bridge",
-  },
-  {
     label: "Documentation",
     href: "/docs",
+  },
+  {
+    label: "Examples",
+    href: "/example",
   },
 ];
 
