@@ -7,15 +7,10 @@ import {
 } from "@/assets/icons/social";
 import { Typography } from "./ui/typography";
 
-interface FooterLinkProps {
-  href: string;
-  children: React.ReactNode;
-}
-
 interface FooterData {
   label: string;
   href: string;
-  icon?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const footerLinks: FooterData[] = [
@@ -41,22 +36,22 @@ const socialLinks: FooterData[] = [
   {
     label: "GitHub",
     href: "https://github.com/your-profile",
-    icon: <GitHubIcon />,
+    children: <GitHubIcon />,
   },
   {
     label: "Telegram",
     href: "https://t.me/your-telegram",
-    icon: <TelegramIcon />,
+    children: <TelegramIcon />,
   },
   {
     label: "Discord",
     href: "https://discord.com/invite/your-invite",
-    icon: <DiscordIcon />,
+    children: <DiscordIcon />,
   },
   {
     label: "Twitter/X",
     href: "https://twitter.com/your-profile",
-    icon: <XIcon />,
+    children: <XIcon />,
   },
 ];
 
@@ -82,7 +77,7 @@ const FooterContent: React.FC = () => {
       {/* Footer Links (Terms, Cookie Policy, etc.) */}
       <div className="flex flex-col lg:flex-row gap-4">
         {footerLinks.map((link, index) => (
-          <FooterLink key={index} href={link.href}>
+          <FooterLink key={index} href={link.href} label={link.label}>
             {link.label}
           </FooterLink>
         ))}
@@ -92,7 +87,7 @@ const FooterContent: React.FC = () => {
       <div className="flex flex-row gap-4">
         {socialLinks.map((social, index) => (
           <FooterIconLink key={index} href={social.href} label={social.label}>
-            {social.icon}
+            {social.children}
           </FooterIconLink>
         ))}
       </div>
@@ -100,7 +95,7 @@ const FooterContent: React.FC = () => {
   );
 };
 
-const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => {
+const FooterLink: React.FC<FooterData> = ({ href, children }) => {
   return (
     <Link
       href={href}
@@ -111,11 +106,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => {
   );
 };
 
-const FooterIconLink: React.FC<{
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}> = ({ href, label, children }) => {
+const FooterIconLink: React.FC<FooterData> = ({ href, label, children }) => {
   return (
     <Link
       href={href}
