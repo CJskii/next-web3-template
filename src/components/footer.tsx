@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
 
 const FooterContent: React.FC = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center gap-4 w-full p-4">
+    <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full p-4">
       {/* Company Info */}
       <div className="flex flex-col justify-center items-center text-muted-foreground">
         <p>© 2024 CJski</p>
@@ -75,7 +75,7 @@ const FooterContent: React.FC = () => {
       </div>
 
       {/* Footer Links (Terms, Cookie Policy, etc.) */}
-      <div className="flex flex-col lg:flex-row gap-4">
+      <div className="flex flex-col lg:flex-row gap-4 justify-center items-center p-8">
         {footerLinks.map((link, index) => (
           <FooterLink key={index} href={link.href} label={link.label}>
             {link.label}
