@@ -91,7 +91,7 @@ export const ConnectWalletButton = () => {
                   <Button
                     variant={"outline"}
                     onClick={openAccountModal}
-                    className="bg-gradient rounded-xl font-normal hover:opacity-90"
+                    className="bg-gradient rounded-xl font-normal hover:opacity-90 text-gray-100 dark:text-foreground"
                     type="button"
                   >
                     {account.displayName}
